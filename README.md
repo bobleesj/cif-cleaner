@@ -2,7 +2,6 @@
 
 <!-- ![Integration Tests](https://github.com/bobleesj/cif-cleaner/actions/workflows/python-run-pytest.yml/badge.svg) -->
 
-[![CI](https://github.com/bobleesj/cif-cleaner/actions/workflows/python-run-pytest.yml/badge.svg)](https://github.com/bobleesj/cif-cleaner/actions/workflows/python-run-pytest.yml)
 ![Python 3.10](https://img.shields.io/badge/python-3.9-blue.svg)
 ![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)
 ![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
