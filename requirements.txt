@@ -1,5 +1,5 @@
-cifkit==1.0.6
-click==8.1.7
-matplotlib==3.8.3
-pandas==2.2.3
-pytest==8.3.4
+cifkit
+click
+matplotlib
+pandas
+pytest
