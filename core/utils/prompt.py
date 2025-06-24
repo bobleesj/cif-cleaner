@@ -1,5 +1,3 @@
-import time
-
 from click import echo, style
 
 
@@ -43,8 +41,8 @@ def print_moved_files_summary(
     if destination_path:
         echo(
             style(
-                f"Moved {len(filtered_file_paths)} out of {file_count} files to "
-                f"{destination_path}."
+                f"Moved {len(filtered_file_paths)} out of {file_count} files "
+                f"to {destination_path}."
             )
         )
     else:

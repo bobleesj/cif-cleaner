@@ -35,7 +35,8 @@ def move_files_based_on_coordination_number(
         click.echo("\nQ2. Now choose your option:")
         click.echo("[1] Move files exactly matching the coordination numbers")
         click.echo(
-            "[2] Move files containing at least one of the coordination numbers"
+            "[2] Move files containing at least one of the "
+            "coordination numbers"
         )
         filter_choice = click.prompt("Enter your choice (1 or 2)", type=int)
     else:
@@ -68,7 +69,8 @@ def _filter_and_move_files(
             CN_values_computed = connections.get_CN_values(cif)
         except Exception as e:
             print(
-                f"Skip {file_name} due to error occurred while computing CN: {e}"
+                f"Skip {file_name} due to error occurred "
+                f"while computing CN: {e}"
             )
             continue
         if filter_choice == 1:

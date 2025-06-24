@@ -20,7 +20,8 @@ def move_files_based_on_elements(
 
     if is_interactive_mode:
         elements_input = click.prompt(
-            "Q1. Enter the elements to filter by, separated by a space (Ex: 'Er Co')",
+            "Q1. Enter the elements to filter by, separated by a space "
+            "(Ex: 'Er Co')",
             type=str,
         ).strip()
         elements = [element for element in elements_input.split() if element]

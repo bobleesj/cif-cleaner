@@ -1,6 +1,6 @@
 import glob
 import os
-from os.path import exists, join
+from os.path import join
 
 
 def choose_dir(script_directory):
@@ -29,7 +29,8 @@ def choose_dir(script_directory):
         try:
             choice = int(
                 input(
-                    "\nEnter the number corresponding to the folder containing .cif files: "
+                    "\nEnter the number corresponding to the folder "
+                    "containing .cif files: "
                 )
             )
             if 1 <= choice <= len(directories):
@@ -56,7 +57,8 @@ def save_to_csv_directory(dir_path, df, base_filename):
     # Set the name for the CSV file based on the chosen folder
     csv_filename = f"{folder_name}_{base_filename}.csv"
 
-    # Save the DataFrame to the desired location (within the 'csv' sub-directory)
+    # Save the DataFrame to the desired location
+    # (within the 'csv' sub-directory)
     df.to_csv(join(csv_directory, csv_filename), index=False)
 
     print(csv_filename, "saved")

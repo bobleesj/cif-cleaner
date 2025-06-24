@@ -1,6 +1,3 @@
-import click
-from cifkit import Cif
-from cifkit.preprocessors.environment import get_site_connections
 from cifkit.preprocessors.error import move_files_based_on_errors
 from cifkit.utils.folder import get_file_paths
 

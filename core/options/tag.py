@@ -1,8 +1,6 @@
 import os
 import shutil
 
-from cifkit import CifEnsemble
-
 from core.utils import intro, object, prompt
 
 
