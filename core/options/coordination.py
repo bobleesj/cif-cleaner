@@ -1,10 +1,11 @@
 import os
-import click
 import time
-from core.utils import intro, prompt, object
+
+import click
 from cifkit import CifEnsemble
 from cifkit.utils import folder
-from core.utils import connections
+
+from core.utils import connections, intro, object, prompt
 
 
 def move_files_based_on_coordination_number(
@@ -33,7 +34,9 @@ def move_files_based_on_coordination_number(
         # Ask user for the type of filter
         click.echo("\nQ2. Now choose your option:")
         click.echo("[1] Move files exactly matching the coordination numbers")
-        click.echo("[2] Move files containing at least one of the coordination numbers")
+        click.echo(
+            "[2] Move files containing at least one of the coordination numbers"
+        )
         filter_choice = click.prompt("Enter your choice (1 or 2)", type=int)
     else:
         filter_choice = option
@@ -64,7 +67,9 @@ def _filter_and_move_files(
         try:
             CN_values_computed = connections.get_CN_values(cif)
         except Exception as e:
-            print(f"Skip {file_name} due to error occurred while computing CN: {e}")
+            print(
+                f"Skip {file_name} due to error occurred while computing CN: {e}"
+            )
             continue
         if filter_choice == 1:
             destination_path = os.path.join(
@@ -102,5 +107,7 @@ def _move_files_and_prompt(
 
     overall_elapsed_time = time.perf_counter() - overall_start_time
     prompt.print_total_time(overall_elapsed_time, file_count)
-    prompt.print_moved_files_summary(filtered_file_paths, file_count, destination_path)
+    prompt.print_moved_files_summary(
+        filtered_file_paths, file_count, destination_path
+    )
     prompt.print_done_with_option("filter by coordination numbers")

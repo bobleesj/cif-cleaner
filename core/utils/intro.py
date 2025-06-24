@@ -6,11 +6,11 @@ def prompt_format_intro():
         """\
     ==========================FORMAT=============================
     Process for this option:
-    
+
     [1] All .cif files are initialized using CifEnsemble from`cifkit`
     [2] Standarlize site labels
     [3] Relocate ill-formated .cif files to separate folders=
-    
+
     Note: please refer to bobleesj.github.io/cifkit for preprocessing
     ============================================================
     """
@@ -23,7 +23,7 @@ def prompt_min_dist_intro():
         """\
     ==========================DISTANCE=============================
     Process for this option:
-    
+
     [1] Compute the minimum distance between atoms in each .cif file
     [2] View histogram of minimum distances
     [3] Enter the min distance threshold
@@ -46,7 +46,7 @@ def prompt_occupancy_intro():
     [3] Files with full occupancy and atomic mixing
     [4] Files with site deficiency but no atomic mixing
 
-    Note: refere to bobleesj.github.io/cifkit for site mixing.
+    Note: refer to bobleesj.github.io/cifkit for site mixing.
     ==================================================================
     """
     )
@@ -58,7 +58,7 @@ def prompt_composition_intro():
         """\
     ==========================COMPOSITION=============================
     Process for this option:
-    
+
     [1] Get the composition type for each .cif file (unary, binary, etc.)
     [2] Move files to subfolders based on the composition type
     ==================================================================
@@ -72,9 +72,9 @@ def prompt_element_intro():
         """\
     ==========================ELEMENT=============================
     Process for this option:
-    
+
     [1] Enter the elements of interest separated by a space
-    [2] Choose to filter by exactly matching or containing the elements 
+    [2] Choose to filter by exactly matching or containing the elements
     ==================================================================
     """
     )
@@ -86,7 +86,7 @@ def prompt_coordination_number_intro():
         """\
     ==========================COORDINAITON_NUMBER=============================
     Process for this option:
-    
+
     [1] Enter coordination numbers by d/min_dist method separated by a space
     [2] Choose to filter by exactly matching or containing coordination numbers
     ==================================================================
@@ -100,7 +100,7 @@ def prompt_suppercell_size_intro():
         """\
     ==========================SUPERCELL=============================
     Process for this option:
-    
+
     [1] Compute the number of atoms in the supercell for each .cif file
     [2] View histogram of supercell atom counts
     [3] Enter the supercell min and max atom counts
@@ -116,8 +116,8 @@ def prompt_tag_intro():
         """\
     ==========================TAG=============================
     Process for this option:
-    
-    [1] Parse tag (i.g. ht, rt) from the thrid line in each .cif file
+
+    [1] Parse tag (i.g. ht, rt) from the third line in each .cif file
     [2] Move files to subfolders based on the tag
     ============================================================
     """
@@ -130,7 +130,7 @@ def prompt_info_intro():
         """\
     ==========================INFO=============================
     Process for this option:
-    
+
     [1] Get formula, structure, tag, mixing type, composition type
     [2] Ask whether to compute min distance (requires computation)
     [3] Save a .csv file for each file

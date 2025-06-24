@@ -1,9 +1,14 @@
+import time
+
 import click
 import pandas as pd
-import time
-from core.utils import folder, prompt, intro, object
 
-def get_cif_folder_info(cif_dir_path, is_interactive_mode=True, compute_dist=False):
+from core.utils import folder, intro, object, prompt
+
+
+def get_cif_folder_info(
+    cif_dir_path, is_interactive_mode=True, compute_dist=False
+):
     intro.prompt_info_intro()
 
     # Keep track of data for .csv
@@ -16,7 +21,9 @@ def get_cif_folder_info(cif_dir_path, is_interactive_mode=True, compute_dist=Fal
 
     # Ask user to calculate distance
     if is_interactive_mode:
-        click.echo("\nQ. Do you want to compute minimum distance per file (slow)?")
+        click.echo(
+            "\nQ. Do you want to compute minimum distance per file (slow)?"
+        )
         compute_dist = click.confirm("(Default: N)", default=False)
     else:
         compute_dist = compute_dist
@@ -56,7 +63,9 @@ def get_cif_folder_info(cif_dir_path, is_interactive_mode=True, compute_dist=Fal
             cif_dir_path, pd.DataFrame(results), "info_with_dist"
         )
     else:
-        folder.save_to_csv_directory(cif_dir_path, pd.DataFrame(results), "info")
+        folder.save_to_csv_directory(
+            cif_dir_path, pd.DataFrame(results), "info"
+        )
 
     # Total processing time
     total_elapsed_time = time.perf_counter() - overall_start_time

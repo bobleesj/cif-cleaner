@@ -1,22 +1,25 @@
-import os
-from os.path import join, exists
 import glob
+import os
+from os.path import exists, join
 
 
 def choose_dir(script_directory):
-    """
-    Allows the user to select a directory from the given path.
-    """
+    """Allows the user to select a directory from the given path."""
 
     directories = [
         d
         for d in os.listdir(script_directory)
         if os.path.isdir(join(script_directory, d))
-        and any(file.endswith(".cif") for file in os.listdir(join(script_directory, d)))
+        and any(
+            file.endswith(".cif")
+            for file in os.listdir(join(script_directory, d))
+        )
     ]
 
     if not directories:
-        print("No directories found in the current path containing .cif files!")
+        print(
+            "No directories found in the current path containing .cif files!"
+        )
         return None
     print("\nAvailable folders containing CIF files:")
     for idx, dir_name in enumerate(directories, start=1):
@@ -32,15 +35,16 @@ def choose_dir(script_directory):
             if 1 <= choice <= len(directories):
                 return join(script_directory, directories[choice - 1])
             else:
-                print(f"Please enter a number between 1 and {len(directories)}.")
+                print(
+                    f"Please enter a number between 1 and {len(directories)}."
+                )
         except ValueError:
             print("Invalid input. Please enter a number.")
 
 
 def save_to_csv_directory(dir_path, df, base_filename):
-    """
-    Saves the dataframe as a CSV inside a 'csv' sub-directory of the provided folder.
-    """
+    """Saves the dataframe as a CSV inside a 'csv' sub-directory of the
+    provided folder."""
 
     csv_directory = join(dir_path, "csv")
     if not os.path.exists(csv_directory):
@@ -56,4 +60,3 @@ def save_to_csv_directory(dir_path, df, base_filename):
     df.to_csv(join(csv_directory, csv_filename), index=False)
 
     print(csv_filename, "saved")
-

@@ -1,10 +1,13 @@
-from click import echo, style
 import time
+
+from click import echo, style
+
 
 def print_progress_current(i, filename, atom_count, file_count):
     echo(
         style(
-            f"Processing {filename} with " f"{atom_count} atoms ({i}/{file_count})",
+            f"Processing {filename} with "
+            f"{atom_count} atoms ({i}/{file_count})",
             fg="yellow",
         )
     )
@@ -34,7 +37,9 @@ def print_done_with_option(option_name):
     echo(style(f"Done with {option_name}", fg="green"))
 
 
-def print_moved_files_summary(filtered_file_paths, file_count, destination_path=None):
+def print_moved_files_summary(
+    filtered_file_paths, file_count, destination_path=None
+):
     if destination_path:
         echo(
             style(
@@ -43,4 +48,8 @@ def print_moved_files_summary(filtered_file_paths, file_count, destination_path=
             )
         )
     else:
-        echo(style(f"Moved {len(filtered_file_paths)} out of {file_count} files."))
+        echo(
+            style(
+                f"Moved {len(filtered_file_paths)} out of {file_count} files."
+            )
+        )

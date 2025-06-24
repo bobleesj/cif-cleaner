@@ -2,12 +2,9 @@
 
 <!-- ![Integration Tests](https://github.com/bobleesj/cif-cleaner/actions/workflows/python-run-pytest.yml/badge.svg) -->
 
-![Python 3.10](https://img.shields.io/badge/python-3.9-blue.svg)
-![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)
 ![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
 ![Python 3.12](https://img.shields.io/badge/python-3.13-blue.svg)
-[![codecov](https://codecov.io/gh/bobleesj/cif-cleaner/graph/badge.svg?token=3KDQ4344V5)](https://codecov.io/gh/bobleesj/cif-cleaner)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/bobleesj/cif-cleaner/blob/main/LICENSE)
 
 `CIF Cleaner` is an interactive and codeless program for sorting,
@@ -162,10 +159,11 @@ allow you to extract geometric features and visualize bonding patterns from
 - If you have any questions or have any suggestions, feel free to reach out to
   Sangjoon Bob Lee ([@bobleesj](https://github.com/bobleesj)) for any questions.
 
-## Changelog
+## Running tests
 
-- 20250124: add option to preprocess files for all all options.
-- 20240709: integrate `cifkit` for filtering and moving files.
-  (https://github.com/bobleesj/cif-cleaner/issues/24)
-- 20240708: add CI tests for all options.
-- 20240705: use `cikift`, refactored code and prompts.
+Run `pytests`.
+
+```bash
+pip install -r requirements.txt pytest
+python -m pytest
+```

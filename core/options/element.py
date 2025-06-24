@@ -1,7 +1,9 @@
 import os
+
 import click
-from core.utils import intro, prompt, object
 from cifkit.utils import folder
+
+from core.utils import intro, object, prompt
 
 
 def move_files_based_on_elements(
@@ -10,10 +12,9 @@ def move_files_based_on_elements(
     elements: list[str] = None,
     option: int = None,
 ) -> None:
-    """
-    Move CIF files based on elements specified by the user, with the option
-    to exactly match or contain the elements in the file's composition.
-    """
+    """Move CIF files based on elements specified by the user, with the
+    option to exactly match or contain the elements in the file's
+    composition."""
     intro.prompt_element_intro()
     ensemble = object.init_cif_ensemble(cif_dir_path)
 
@@ -38,7 +39,9 @@ def move_files_based_on_elements(
     folder_name = os.path.basename(cif_dir_path)
 
     if filter_choice == 1:
-        filtered_file_paths = ensemble.filter_by_elements_exact_matching(elements)
+        filtered_file_paths = ensemble.filter_by_elements_exact_matching(
+            elements
+        )
         destination_path = os.path.join(
             cif_dir_path, f"{folder_name}_exact_{elements_str}"
         )
