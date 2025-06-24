@@ -1,7 +1,7 @@
-import shutil
 import os
-from core.utils import prompt, intro, object
-from cifkit import CifEnsemble
+import shutil
+
+from core.utils import intro, object, prompt
 
 
 def move_files_based_on_tags(cif_dir_path: str) -> None:

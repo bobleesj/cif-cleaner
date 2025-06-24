@@ -1,6 +1,8 @@
-import click
 from os.path import join
-from core.utils import prompt, intro, object
+
+import click
+
+from core.utils import intro, object, prompt
 from core.utils.histogram import plot_supercell_size_histogram
 
 
@@ -17,7 +19,9 @@ def move_files_based_on_supercell_size(
     for idx, cif in enumerate(ensemble.cifs, start=1):
         atom_counts.append(cif.supercell_atom_count)
 
-    plot_supercell_size_histogram(cif_dir_path, atom_counts, ensemble.file_count)
+    plot_supercell_size_histogram(
+        cif_dir_path, atom_counts, ensemble.file_count
+    )
 
     if is_interactive_mode:
         min_atom_count = click.prompt(

@@ -1,11 +1,10 @@
 import os
+
 import matplotlib.pyplot as plt
 
 
 def create_plot_directory(folder_path):
-    """
-    Ensure the plot directory exists.
-    """
+    """Ensure the plot directory exists."""
     plot_directory = os.path.join(folder_path, "plot")
     if not os.path.exists(plot_directory):
         os.makedirs(plot_directory)
@@ -13,9 +12,7 @@ def create_plot_directory(folder_path):
 
 
 def save_histogram(data, bins, title, xlabel, ylabel, file_path):
-    """
-    Save histogram plot to a file.
-    """
+    """Save histogram plot to a file."""
     plt.figure(figsize=(10, 6))
     plt.hist(data, bins=bins, color="blue", edgecolor="black")
     plt.title(title)
@@ -28,9 +25,7 @@ def save_histogram(data, bins, title, xlabel, ylabel, file_path):
 
 
 def plot_distance_histogram(cif_dir, distances, num_of_files):
-    """
-    Plot the histogram of the min distances in CIF files.
-    """
+    """Plot the histogram of the min distances in CIF files."""
     plot_directory = create_plot_directory(cif_dir)
     histogram_path = os.path.join(plot_directory, "histogram-min-dist.png")
     title = f"Histogram of Shortest Distances of {num_of_files} files"
@@ -44,12 +39,14 @@ def plot_distance_histogram(cif_dir, distances, num_of_files):
     )
 
 
-def plot_supercell_size_histogram(cif_dir, supercell_atom_counts, num_of_files):
-    """
-    Plot the histogram of the supercell atom count in CIF files.
-    """
+def plot_supercell_size_histogram(
+    cif_dir, supercell_atom_counts, num_of_files
+):
+    """Plot the histogram of the supercell atom count in CIF files."""
     plot_directory = create_plot_directory(cif_dir)
-    histogram_path = os.path.join(plot_directory, "histogram-supercell-size.png")
+    histogram_path = os.path.join(
+        plot_directory, "histogram-supercell-size.png"
+    )
     title = f"Histogram of Supercell Atom Count of {num_of_files} files"
     save_histogram(
         supercell_atom_counts,

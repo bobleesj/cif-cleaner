@@ -1,18 +1,20 @@
 import os
 
+import click
+
 from core.options import (
-    min_distance,
-    tag,
-    supercell_size,
-    info,
-    format,
-    occupancy,
     composition,
     coordination,
     element,
+    format,
+    info,
+    min_distance,
+    occupancy,
+    supercell_size,
+    tag,
 )
 from core.utils import folder
-import click
+
 
 def main():
     script_dir_path = os.path.dirname(os.path.abspath(__file__))
