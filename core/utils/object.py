@@ -4,9 +4,9 @@ from cifkit import CifEnsemble
 from click import secho
 
 
-def init_cif_ensemble(cif_dir_path) -> CifEnsemble:
+def init_cif_ensemble(cif_dir_path, supercell_size=2) -> CifEnsemble:
     start_time = set_initial_time()
-    ensemble = CifEnsemble(cif_dir_path, preprocess=False)
+    ensemble = CifEnsemble(cif_dir_path, preprocess=False, supercell_size=supercell_size)
     print_elasped_time(start_time)
     return ensemble
 

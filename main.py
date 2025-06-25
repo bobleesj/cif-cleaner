@@ -65,31 +65,24 @@ def main():
     # 2. Relocate CIF files with unreasonable distances
     if choice == "2":
         min_distance.move_files_based_on_min_dist(cif_dir_path)
-
     # 3. Relocate CIF based the number of atoms in the supercell
     elif choice == "3":
         supercell_size.move_files_based_on_supercell_size(cif_dir_path)
-
     # 4. Relocate CIF based on tags
     elif choice == "4":
         tag.move_files_based_on_tags(cif_dir_path)
-
     # 5. Relocate CIF based on composition type
     elif choice == "5":
         composition.move_files_based_on_composition_type(cif_dir_path)
-
     # 6. Relocate CIF based by element(s)
     elif choice == "6":
         element.move_files_based_on_elements(cif_dir_path)
-
     # 7. Relocate CIF based on coordination number
     elif choice == "7":
         coordination.move_files_based_on_coordination_number(cif_dir_path)
-
     # 8. Copy files based on atomic occupancy and atomic mixing
     elif choice == "8":
         occupancy.copy_files_based_on_atomic_occupancy_mixing(cif_dir_path)
-
     # 9. Get info per file in the folder
     elif choice == "9":
         info.get_cif_folder_info(cif_dir_path)
