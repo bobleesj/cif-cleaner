@@ -10,6 +10,6 @@ jobs:
   release:
     uses: scikit-package/release-scripts/.github/workflows/_release-on-github-on-tag-push.yml@v0
     with:
-      maintainer_GITHUB_username: sbillinge
+      maintainer_GITHUB_username: bobleesj
     secrets:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
